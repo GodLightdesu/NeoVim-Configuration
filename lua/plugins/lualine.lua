@@ -10,8 +10,8 @@ return {
 			options = {
 				-- 若有安裝 nerdfont，顯示檔案圖示
 				icons_enabled = true,
-				-- 設定主題為 kanagawa_paper（可依需求選擇其他主題）
-				theme = "kanagawa_paper",
+				-- 設定主題為 tomorrow_night（沒有與 kanagawa_paper 相符的lualine 主題）
+				theme = "tomorrow_night",
 				-- 使用分隔符將欄位區隔開
 				component_separators = { left = "", right = "" },
 				-- 使用三角分隔區塊
