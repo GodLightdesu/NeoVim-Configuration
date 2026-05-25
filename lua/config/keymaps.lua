@@ -15,6 +15,8 @@ keymap.set("v", "<S-Tab>", "<gv", { desc = "向左縮排" })
 keymap.set("v", "<Tab>", ">gv", { desc = "向右縮排" })
 
 -- ---------- 正常模式 ---------- ---
+-- 禁用預設的 K 鍵（通常是顯示懸浮窗），改為使用 pretty_hover 插件提供的增強懸浮窗功能
+vim.keymap.set("n", "K", "<nop>", { desc = "Disable default hover" })
 -- 縮排
 vim.keymap.set("n", "<Tab>", "v><C-\\><CN>", { desc = "向右縮排" })
 vim.keymap.set("n", "<S-Tab>", "v<<C-\\><CN>", { desc = "向左縮排" })

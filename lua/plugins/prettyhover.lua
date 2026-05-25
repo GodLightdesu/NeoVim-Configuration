@@ -71,4 +71,9 @@ return {
 	"Fildo7525/pretty_hover",
 	event = "LspAttach",
 	opts = default_config,
+  keys = {
+    -- 將 <leader>K 鍵映射為 pretty_hover 的增強懸浮窗
+    { "<leader>K", "<cmd>lua require('pretty_hover').hover()<CR>", desc = "Hover (pretty)" },
+  },
+
 }
