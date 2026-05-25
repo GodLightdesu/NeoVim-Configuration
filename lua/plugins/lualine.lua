@@ -22,7 +22,7 @@ return {
 					winbar = {},
 				},
 				-- 不在 NvimTree 視窗上啟用 lualine 的 focus
-				ignore_focus = { "NvimTree" },
+				-- ignore_focus = { "NvimTree" },
 				-- 在中間分割 lualine 區域
 				always_divide_middle = true,
 				-- 關閉全域狀態列（僅在需要時啟用）
