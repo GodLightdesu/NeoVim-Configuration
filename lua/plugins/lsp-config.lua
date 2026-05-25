@@ -48,7 +48,7 @@ return {
     -- ========== 通用 LSP 快捷鍵 ==========
     local keymap = vim.keymap
     -- 設定 Vim 快速鍵: 顯示遊標下程式碼的懸停文件。
-    keymap.set("n", "<leader>ch", vim.lsp.buf.hover, { desc = "[C]ode [H]over Documentation" })
+    keymap.set("n", "<leader>ch", function() require("pretty_hover").hover() end, { desc = "[C]ode [H]over Documentation" })
     
     -- 設定 Vim 快速鍵: 跳轉到遊標下程式碼的定義位置。
     keymap.set("n", "<leader>cd", vim.lsp.buf.definition, { desc = "[C]ode Goto [D]efinition" })

@@ -22,13 +22,23 @@ return {
     end
 
     cmp.setup({
+      window = {
+        completion = cmp.config.window.bordered({
+          border = "rounded",
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+        }),
+        documentation = cmp.config.window.bordered({
+          border = "rounded",
+          winhighlight = "Normal:Normal,FloatBorder:BorderBG,CursorLine:PmenuSel,Search:None",
+        }),
+      },
       -- 定義補全選單的行為
       completion = {
-          -- menu: display options in a menu
-          -- menuone: automatically select the first option of the menu
-          -- preview: automatically display the completion candiate as you navigate the menu
-          -- noselect: prevent neovim from automatically selecting a completion option while navigating the menu
-          competeopt = "menu,menuone,preview,noselect"
+        -- menu: display options in a menu
+        -- menuone: automatically select the first option of the menu
+        -- preview: automatically display the completion candiate as you navigate the menu
+        -- noselect: prevent neovim from automatically selecting a completion option while navigating the menu
+        completeopt = "menu,menuone,preview,noselect"
       },
       snippet = {
         expand = function(args)
