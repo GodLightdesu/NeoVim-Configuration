@@ -200,6 +200,7 @@ return {
       { "<leader>f", group = "[F]ind" },
       { "<leader>g", group = "[G]it" },
       { "<leader>J", group = "[J]ava" },
+      { "<leader>C", group = "[C]/C++" },
       { "<leader>w", group = "[W]indow" },
     })
   end,

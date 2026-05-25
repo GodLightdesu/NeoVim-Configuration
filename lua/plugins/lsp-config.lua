@@ -29,17 +29,26 @@ return {
     -- ========== 自動設定其他透過 Mason 安裝的伺服器 ==========
     for _, server in ipairs(require("mason-lspconfig").get_installed_servers()) do
       local server_config = { capabilities = capabilities }
-      if server == "jdtls" then  else
+      if server == "jdtls" then
           goto continue   -- 跳過 jdtls，由 nvim-jdtls 單獨處理
       end
+      -- 如果是 clangd，加入特定參數並設定 on_new_config 以處理 compile_commands.json 的變化
       if server == "clangd" then
+        -- 加入 clangd 特定參數，啟用背景索引和 clang-tidy 支持
         server_config.cmd = {
           "clangd",
           "--background-index",
-          "--compile-commands-dir=" .. project_root,
+          "--clang-tidy",
         }
+        -- 當 clangd 的配置被更新（例如 compile_commands.json 變化）時，重啟 LSP 以讓變更生效
+        server_config.on_new_config = function(new_config, new_cwd)
+          local status, cmake = pcall(require, "cmake-tools")
+          if status then
+            cmake.clangd_on_new_config(new_config)
+          end
+        end
       end
-
+      -- 使用 nvim-lspconfig 設定並啟用 LSP 伺服器
       vim.lsp.config(server, server_config)
       vim.lsp.enable(server)
       ::continue::
@@ -70,6 +79,9 @@ return {
     
     -- 設定 Vim 快速鍵: 格式化當前文件
     keymap.set("n", "<leader>cf", function() vim.lsp.buf.format({ async = true }) end, { desc = "[C]ode [F]ormat" })
+
+    -- 設定 Vim 快速鍵: 重啟 LSP 伺服器 (當檔案卡住或 compile_commands.json 更新但沒反應時使用)
+    keymap.set("n", "<leader>lr", "<cmd>lsp restart<CR>", { desc = "[l]sp [r]estart" })
 
     -- 診斷與格式化
     keymap.set("n", "<leader>d", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
