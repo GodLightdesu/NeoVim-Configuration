@@ -13,6 +13,13 @@ return {
   config = function()
     local cmp = require("cmp")
     local luasnip = require("luasnip")
+
+    -- 解決 Tab 鍵亂跳的問題：告訴 luasnip 在離開 Insert 模式或移動游標時中斷片段
+    luasnip.config.setup({
+      region_check_events = "CursorHold,InsertLeave",
+      delete_check_events = "TextChanged,InsertLeave",
+    })
+
     require("luasnip.loaders.from_vscode").lazy_load() -- 載入 vscode 風格片段
 
     -- 輔助函數：判斷游標前是否有單字字元（用於 Tab 鍵補全）
