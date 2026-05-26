@@ -36,6 +36,11 @@ return {
       hijack_netrw = true,          -- 接管 netrw 的功能
       update_cwd = true,            -- 切換目錄時更新工作目錄
       sync_root_with_cwd = true,    -- 同步根目錄與工作目錄
+      actions = {
+        change_dir = {
+          global = true,           -- 全局切換目錄
+        },
+      },
       auto_reload_on_write = true,  -- 寫入檔案後自動重新載入
       on_attach = my_on_attach,     -- 使用自訂的 on_attach 函式
       renderer = renderer_config    -- 使用自訂的圖示設定
