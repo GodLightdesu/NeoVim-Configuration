@@ -3,6 +3,7 @@ return {
 { -- Telescope
   "nvim-telescope/telescope.nvim", 
   version = "*", 
+  event = "VeryLazy",
   dependencies = {
     "nvim-lua/plenary.nvim",
     -- 可選但建議安裝（提供更快的 fzf 效能）
@@ -32,6 +33,7 @@ return {
 },
 { -- telescope-ui-select 擴充
   "nvim-telescope/telescope-ui-select.nvim",
+  event = "VeryLazy",
   config = function()
     -- 取得 Telescope 的導覽相關函式
     local actions = require("telescope.actions")

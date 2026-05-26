@@ -34,6 +34,7 @@ return {
   -- mason-nvim-dap: 使用 Mason 管理 DAP（Debug Adapter Protocol）適配器
   {
     "jay-babu/mason-nvim-dap.nvim",
+    event = "VeryLazy",
     dependencies = {
       "williamboman/mason.nvim",
       "mfussenegger/nvim-dap",

@@ -1,6 +1,7 @@
 -- 檔案瀏覽器
 return {
   "nvim-tree/nvim-tree.lua",
+  event = "VeryLazy",
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     -- 設定快捷鍵，<leader>e 用於切換檔案瀏覽器
@@ -47,10 +48,10 @@ return {
     })
 
     -- 在 Vim 啟動時自動打開 nvim-tree
-    vim.api.nvim_create_autocmd("VimEnter", {
-      callback = function()
-        require("nvim-tree.api").tree.open()
-      end,
-    })
+    -- vim.api.nvim_create_autocmd("VimEnter", {
+    --   callback = function()
+    --     require("nvim-tree.api").tree.open()
+    --   end,
+    -- })
   end
 }
