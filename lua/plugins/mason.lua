@@ -26,6 +26,7 @@ return {
           "rust_analyzer", -- Rust
           "marksman",      -- Markdown
           "jdtls",         -- Java
+          "intelephense",  -- PHP
         },
       })
     end
