@@ -41,11 +41,11 @@ keymap.set("n", "<C-L>", ":bnext<CR>", { desc = "切換下個緩衝區" })
 keymap.set("n", "<C-H>", ":bprevious<CR>", { desc = "切換上個緩衝區" })
 
 -- 終端
-keymap.set('n', '<leader>t', ':bot term<CR>', { desc = "打開底部終端" })
-keymap.set("t", '<Esc>', '<C-\\><C-n>', { desc = "退出終端模式" })
+keymap.set("n", "<leader>t", ":bot term<CR>", { desc = "打開底部終端" })
+keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "退出終端模式" })
 -- 在終端模式按下 Ctrl+l Ctrl+l 清空畫面並保留滾動歷史限制
-vim.keymap.set('t', '<C-l><C-l>', function()
+vim.keymap.set("t", "<C-l><C-l>", function()
   vim.opt_local.scrollback = 1
-  vim.fn.feedkeys(vim.api.nvim_replace_termcodes('iclear<CR>', true, false, true), 't')
+  vim.fn.feedkeys(vim.api.nvim_replace_termcodes("iclear<CR>", true, false, true), "t")
   vim.opt_local.scrollback = 10000
 end, { desc = "清空終端畫面" })

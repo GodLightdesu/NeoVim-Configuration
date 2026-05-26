@@ -3,11 +3,11 @@ local default_config = {
   -- Tables grouping the detected strings and using the markdown highlighters.
   header = {
     detect = { "[\\@]class" },
-    styler = '###',
+    styler = "###",
   },
   line = {
     detect = { "[\\@]brief" },
-    styler = '**',
+    styler = "**",
   },
   listing = {
     detect = { "[\\@]li" },

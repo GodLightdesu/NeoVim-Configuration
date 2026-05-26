@@ -4,7 +4,7 @@ return {
   dependencies = { "nvim-tree/nvim-web-devicons" },
   config = function()
     -- 設定快捷鍵，<leader>e 用於切換檔案瀏覽器
-    vim.keymap.set('n', '<leader>e', "<cmd>NvimTreeToggle<CR>", {desc = "切換 [E]xplorer"})
+    vim.keymap.set("n", "<leader>e", "<cmd>NvimTreeToggle<CR>", {desc = "切換 [E]xplorer"})
     
     -- 自訂 on_attach 函式來設定快捷鍵
     local function my_on_attach(bufnr)
@@ -12,9 +12,9 @@ return {
       -- 載入預設快捷鍵
       api.config.mappings.default_on_attach(bufnr)
       -- 綁定 <leader>[ 退回上一層並設為根目錄
-      vim.keymap.set('n', '<leader>[', api.tree.change_root_to_parent, {buffer = bufnr, desc = "CD .."})
+      vim.keymap.set("n", "<leader>[", api.tree.change_root_to_parent, {buffer = bufnr, desc = "CD .."})
       -- 綁定 <leader>] 進入當前資料夾並設為根目錄
-      vim.keymap.set('n', '<leader>]', api.tree.change_root_to_node, {buffer = bufnr, desc = "CD folder"})
+      vim.keymap.set("n", "<leader>]", api.tree.change_root_to_node, {buffer = bufnr, desc = "CD folder"})
     end
 
     -- 圖示設定
