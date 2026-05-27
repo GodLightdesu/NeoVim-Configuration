@@ -78,6 +78,21 @@ local function java_keymaps()
     vim.keymap.set('n', '<leader>JT', "<Cmd> lua require('jdtls').test_class()<CR>", { desc = "[J]ava [T]est Class" })
 	-- Set a Vim motion to <Space> + <Shift>J + u to update the project configuration
     vim.keymap.set('n', '<leader>Ju', "<Cmd> JdtUpdateConfig<CR>", { desc = "[J]ava [U]pdate Config" })
+
+	-- Set a Vim motion to <Space> + <Shift>J + h to override the default hover keybinding
+		vim.keymap.set("n", "<leader>ch", function() vim.lsp.buf.hover({
+			border = "rounded",
+			max_width = 60,
+			max_height = 15,
+		}) end, { desc = "[C]ode [H]over Documentation" })
+	
+	-- Set a Vim motion to <Space> + <Shift>J + K to override the default pretty hover keybinding
+		vim.keymap.set('n', '<leader>K', function() vim.lsp.buf.hover({
+			border = "rounded",
+			max_width = 60,
+			max_height = 15,
+		}) end, {buffer=bufnr, desc="Hover (pretty)"})
+
 end
 
 local function setup_jdtls()
