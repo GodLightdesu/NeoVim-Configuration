@@ -55,6 +55,24 @@ return {
       ::continue::
     end
 
+    -- ========== 儲存時對所有 LSP 自動格式化 ==========
+    vim.api.nvim_create_autocmd("LspAttach", {
+      group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+      callback = function(ev)
+        -- 確認該 LSP 是否支援格式化功能
+        local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        if client and client.server_capabilities.documentFormattingProvider then
+          -- 當緩衝區被寫入前，呼叫 LSP 的格式化功能，並確保使用正確的 LSP 伺服器（透過 client_id）
+          vim.api.nvim_create_autocmd("BufWritePre", {
+            buffer = ev.buf,
+            callback = function()
+              vim.lsp.buf.format({ async = false, id = ev.data.client_id })
+            end,
+          })
+        end
+      end,
+    })
+
     -- ========== 通用 LSP 快捷鍵 ==========
     local keymap = vim.keymap
     -- 設定 Vim 快速鍵: 顯示遊標下程式碼的懸停文件。
