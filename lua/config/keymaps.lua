@@ -21,8 +21,8 @@ vim.keymap.set("n", "K", "<nop>", { desc = "Disable default hover" })
 vim.keymap.set("n", "<Tab>", "v><C-\\><CN>", { desc = "向右縮排" })
 vim.keymap.set("n", "<S-Tab>", "v<<C-\\><CN>", { desc = "向左縮排" })
 -- 視窗
-keymap.set("n", "<leader>sv", "<C-w>v", { desc = "水平新增視窗"})
-keymap.set("n", "<leader>sh", "<C-w>s", { desc = "垂直新增視窗"})
+keymap.set("n", "<leader>sv", "<C-w>v", { desc = "水平新增視窗" })
+keymap.set("n", "<leader>sh", "<C-w>s", { desc = "垂直新增視窗" })
 -- 視窗跳轉 (左/下/上/右)
 keymap.set("n", "<leader>h", "<C-w>h", { desc = "跳轉到左側視窗" })
 keymap.set("n", "<leader>j", "<C-w>j", { desc = "跳轉到下方視窗" })
@@ -43,7 +43,7 @@ keymap.set("n", "<C-H>", ":bprevious<CR>", { desc = "切換上個緩衝區" })
 -- 終端
 keymap.set("n", "<leader>t", ":bot term<CR>", { desc = "打開底部終端" })
 keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "退出終端模式" })
--- 在終端模式按下 Ctrl+l Ctrl+l 清空畫面並保留滾動歷史限制
+-- 在終端模式按下 Ctrl+l 清空畫面並保留滾動歷史限制
 vim.keymap.set("t", "<C-l><C-l>", function()
   vim.opt_local.scrollback = 1
   vim.fn.feedkeys(vim.api.nvim_replace_termcodes("iclear<CR>", true, false, true), "t")

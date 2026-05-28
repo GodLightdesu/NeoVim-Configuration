@@ -96,7 +96,7 @@ brew install --cask font-hack-nerd-font
 | `:qa` | 退出 Neovim |
 | `:e <filename>` | 開啟檔案 |
 | `<leader>t` | 打開底部終端機 | 
-| `Ctrl l Ctrl l` | (在終端模式下) 清空終端畫面 |
+| `Ctrl l` | 清空終端畫面 |
 
 ## 🧭 Navigation & UI (檔案與視覺導航)
 
