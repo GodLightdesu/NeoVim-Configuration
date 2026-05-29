@@ -237,7 +237,50 @@ Neovim 的代碼補全引擎。
 |--------|------|
 | `<leader>r` | 執行目前程式碼檔案 |
 
-### 3. Java & Spring Boot Development (`jdtls.lua`, `springboot-nvim.lua`)
+### 3. LeetCode (`leetcode.lua`)
+提供 LeetCode 題目瀏覽、解題、送出與題目資訊面板，適合在 Neovim 內直接刷題。
+
+> 預設語言為 Java，可透過 `<leader>lg` 切換目前題目的語言。
+
+可以透過以下方式開啟 LeetCode
+
+```bash
+nvim leetcode.nvim
+```
+或者使用`:Leet`命令 (`<leader>lm`)
+
+有些指令可以接受可選參數。若要堆疊參數值，請用逗號分隔。,
+
+- Leet list
+
+  ```
+  :Leet list status=<status> difficulty=<difficulty>
+  ```
+
+- Leet random
+
+  ```
+  Leet random status=<status> difficulty=<difficulty> tags=<tags>
+  ```
+
+
+| 快捷鍵 | 功能 |
+|--------|------|
+| `<leader>lm` | 開啟 LeetCode Dashboard |
+| `<leader>lr` | 執行目前題目 |
+| `<leader>ls` | 送出目前題目 |
+| `<leader>ld` | 切換題目描述 |
+| `<leader>ll` | 開啟題目清單 |
+| `<leader>li` | 顯示目前題目資訊 |
+| `<leader>lh` | 顯示題目提示 |
+| `<leader>lt` | 測試程式碼 |
+| `<leader>lc` | 開啟目前題目的控制台 |
+| `<leader>lL` | 切換目前題目的語言 |
+| `<leader>lD` | 開啟每日題目 |
+| `<leader>lx` | 將編輯器程式碼段重設為預設程式碼片段 |
+| `<leader>le` | 關閉 leetcode.nvim |
+
+### 4. Java & Spring Boot Development (`jdtls.lua`, `springboot-nvim.lua`)
 提供完整的 Java 開發與 Spring Boot 支援。
 
 | 快捷鍵 (Java) | 功能 |
@@ -256,7 +299,7 @@ Neovim 的代碼補全引擎。
 | `<leader>Ji` | 建立 Java Interface |
 | `<leader>Je` | 建立 Java Enum |
 
-### 4. Debugging (`nvim-dap.lua`)
+### 5. Debugging (`nvim-dap.lua`)
 基於 DAP 的程式除錯環境整合。
 
 | 快捷鍵 | 功能 |
@@ -269,7 +312,7 @@ Neovim 的代碼補全引擎。
 | `<leader>dr` | 執行到游標處 (Run to Cursor) |
 | `<leader>dq` | 強制終止除錯、關閉 UI 並清除相關的終端機 (Quit & Clean) |
 
-### 5. CMake Tools (`cmake.lua`)
+### 6. CMake Tools (`cmake.lua`)
 提供 C/C++ CMake 專案的 configure、build、run 與 debug 支援。
 
 | 快捷鍵 | 功能 |

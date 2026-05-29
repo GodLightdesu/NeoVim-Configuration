@@ -201,7 +201,7 @@ return {
       { "<leader>g", group = "[G]it" },
       { "<leader>J", group = "[J]ava" },
       { "<leader>C", group = "[C]/C++" },
-      { "<leader>w", group = "[W]indow" },
+      { "<leader>l", group = "[L]eet Code" },
     })
   end,
 }
