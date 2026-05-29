@@ -95,7 +95,7 @@ brew install --cask font-hack-nerd-font
 | `:q` | 關閉目前視窗 |
 | `:qa` | 退出 Neovim |
 | `:e <filename>` | 開啟檔案 |
-| `<leader>t` | 打開底部終端機 | 
+| `<leader>T` | 打開底部終端機 | 
 | `Ctrl l` | 清空終端畫面 |
 
 ## 🧭 Navigation & UI (檔案與視覺導航)
@@ -171,9 +171,9 @@ Neovim 的代碼補全引擎。
 | `<leader>cf`| 格式化檔案 (Format) |
 | `<leader>cr`| 列出所有引用 (References) |
 | `<leader>ci`| 列出所有實作 (Implementations) |
-| `<leader>lr`| 重啟 LSP |
-| `<leader>d` | 顯示行內診斷訊息 (Line Diagnostics) |
-| `[ d` / `]d` | 移至上一個/下一個診斷訊息 ( Prev/Next Diagnostic ) |
+| `<leader>pr`| 重啟 LSP |
+| `<leader>Di` | 顯示行內診斷訊息 (Line Diagnostics) |
+| `<leader>D[` / `<leader>D]` | 移至上一個/下一個診斷訊息 ( Prev/Next Diagnostic ) |
 
 ### 3. Pretty Hover (`prettyhover.lua`)
 美化 LSP 的懸浮視窗。
@@ -221,9 +221,9 @@ Neovim 的代碼補全引擎。
 
 | 快捷鍵 | 功能 |
 |--------|------|
-| `]t` | 跳轉到檔案內的**下一個** TODO 標籤 |
-| `[t` | 跳轉到檔案內的**上一個** TODO 標籤 |
-| `<leader>ft` | 開啟 Telescope 搜尋專案內**所有的** TODO 標籤 |
+| `<leader>t]` | 跳轉到檔案內的**下一個** TODO 標籤 |
+| `<leader>t[` | 跳轉到檔案內的**上一個** TODO 標籤 |
+| `<leader>tf` | 開啟 Telescope 搜尋專案內**所有的** TODO 標籤 |
 
 ## ☕ Development Tools (開發環境與工作流)
 
@@ -240,14 +240,14 @@ Neovim 的代碼補全引擎。
 ### 3. LeetCode (`leetcode.lua`)
 提供 LeetCode 題目瀏覽、解題、送出與題目資訊面板，適合在 Neovim 內直接刷題。
 
-> 預設語言為 Java，可透過 `<leader>lg` 切換目前題目的語言。
+> 預設語言為 Java，可透過 `<leader>LL` 切換目前題目的語言。
 
 可以透過以下方式開啟 LeetCode
 
 ```bash
 nvim leetcode.nvim
 ```
-或者使用`:Leet`命令 (`<leader>lm`)
+或者在空的 buffer 使用`:Leet`命令 (`<leader>Lm`)
 
 有些指令可以接受可選參數。若要堆疊參數值，請用逗號分隔。,
 
@@ -263,22 +263,21 @@ nvim leetcode.nvim
   Leet random status=<status> difficulty=<difficulty> tags=<tags>
   ```
 
-
 | 快捷鍵 | 功能 |
 |--------|------|
-| `<leader>lm` | 開啟 LeetCode Dashboard |
-| `<leader>lr` | 執行目前題目 |
-| `<leader>ls` | 送出目前題目 |
-| `<leader>ld` | 切換題目描述 |
-| `<leader>ll` | 開啟題目清單 |
-| `<leader>li` | 顯示目前題目資訊 |
-| `<leader>lh` | 顯示題目提示 |
-| `<leader>lt` | 測試程式碼 |
-| `<leader>lc` | 開啟目前題目的控制台 |
-| `<leader>lL` | 切換目前題目的語言 |
-| `<leader>lD` | 開啟每日題目 |
-| `<leader>lx` | 將編輯器程式碼段重設為預設程式碼片段 |
-| `<leader>le` | 關閉 leetcode.nvim |
+| `<leader>Lm` | 開啟 LeetCode Dashboard |
+| `<leader>Lr` | 執行目前題目 |
+| `<leader>Ls` | 送出目前題目 |
+| `<leader>Ld` | 切換題目描述 |
+| `<leader>Ll` | 開啟題目清單 |
+| `<leader>Li` | 顯示目前題目資訊 |
+| `<leader>Lh` | 顯示題目提示 |
+| `<leader>Lt` | 測試程式碼 |
+| `<leader>Lc` | 開啟目前題目的控制台 |
+| `<leader>LL` | 切換目前題目的語言 |
+| `<leader>LD` | 開啟每日題目 |
+| `<leader>Lx` | 將編輯器程式碼段重設為預設程式碼片段 |
+| `<leader>Le` | 關閉 leetcode.nvim |
 
 ### 4. Java & Spring Boot Development (`jdtls.lua`, `springboot-nvim.lua`)
 提供完整的 Java 開發與 Spring Boot 支援。

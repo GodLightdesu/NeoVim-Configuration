@@ -16,15 +16,15 @@ return {
     local keymap = vim.keymap
 
     -- 跳轉到下一個/上一個 TODO
-    keymap.set("n", "]t", function()
+    keymap.set("n", "<leader>t]", function()
       todo_comments.jump_next()
     end, { desc = "跳轉到下一個 TODO 註解" })
 
-    keymap.set("n", "[t", function()
+    keymap.set("n", "<leader>t[", function()
       todo_comments.jump_prev()
     end, { desc = "跳轉到上一個 TODO 註解" })
 
     -- 結合已安裝的 Telescope 來搜尋全域的 TODO
-    keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>", { desc = "在專案中尋找 TODOs" })
+    keymap.set("n", "<leader>tf", "<cmd>TodoTelescope<cr>", { desc = "在專案中尋找 TODOs" })
   end,
 }
